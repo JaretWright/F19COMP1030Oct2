@@ -16,4 +16,13 @@ public class Car {
         this.odometer = odometer;
     }
 
+    /**
+     * This method will return the Car as a String object
+     */
+    public String toString()
+    {
+        return colour + " " + make;
+    }
+
+
 }
