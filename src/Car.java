@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Car {
     //these are the private "instance" variables
     private String make, model, colour;
@@ -12,7 +14,7 @@ public class Car {
         this.make = make;
         this.model = model;
         this.colour = colour;
-        this.year = year;
+        setYear(year);
         setOdometer(odometer);
     }
 
@@ -57,7 +59,12 @@ public class Car {
     }
 
     public void setYear(int year) {
-        this.year = year;
+        if (year >= 1886 && year <= LocalDate.now().getYear()+1)
+            this.year = year;
+        else
+            this.year = LocalDate.now().getYear(); //default should throw an exception
+                                                //but for now we will use a default
+                                                //of the current year
     }
 
     public void setOdometer(int odometer) {
