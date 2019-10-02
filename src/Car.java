@@ -13,7 +13,7 @@ public class Car {
         this.model = model;
         this.colour = colour;
         this.year = year;
-        this.odometer = odometer;
+        setOdometer(odometer);
     }
 
     /**
@@ -24,5 +24,50 @@ public class Car {
         return colour + " " + make;
     }
 
+    public String getMake() {
+        return make;
+    }
 
+    public String getModel() {
+        return model;
+    }
+
+    public String getColour() {
+        return colour;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public int getOdometer() {
+        return odometer;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setColour(String colour) {
+        this.colour = colour;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void setOdometer(int odometer) {
+        //if the odometer is greater than or equal to 0, set the odometer
+        //instance variable with the argument passed into the method
+        if (odometer >= 0)
+            this.odometer = odometer;
+        else
+            this.odometer=0; //set a default value.  Later in the course
+                             //we will throw an IllegalArgumentException and see
+                             //how to handle them
+    }
 }
